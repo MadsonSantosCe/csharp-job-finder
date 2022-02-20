@@ -14,7 +14,7 @@ Segue o repositório do curso em Node: [https://github.com/MadsonSantosCe/node-j
 
 ## Passo a passo para a execução do projeto
 - Use o [Git Bash](https://git-scm.com/downloads/ "Git Bash") para clonar o repositório https://github.com/MadsonSantosCe/csharp-job-finder.git
-- Acesse a pasta do repositório através do [Visual Studio Community](https://visualstudio.microsoft.com/pt-br/vs/community/ "Visual Studio Community") ou qualquer IDE a sua escolha que compile o C#
+- Acesse a pasta do repositório através do [Visual Studio](https://visualstudio.microsoft.com/pt-br/vs/community/ "Visual Studio Community") ou qualquer IDE a sua escolha que compile o C#
 - Acesse o repositório através do Visual Studio
 - Execute o projeto clicando duas vezes no arquivo "csharp-job-finder.sln" na pasta do projeto
 - Clique no executor do IIS Express a parte superior da IDE
