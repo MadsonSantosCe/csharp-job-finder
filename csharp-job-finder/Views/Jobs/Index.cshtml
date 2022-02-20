@@ -1,0 +1,59 @@
+﻿@model IEnumerable<csharp_job_finder.Models.Job>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div id="top-container" class="container-fluid">
+    <h1 id="main-title" class="text-center">Encontre o emprego dos seus sonhos</h1>
+    <p id="main-subtitle" class="text-center">Somos o site com mais vagas de tecnologia no mercado, direcionadas a home office</p>
+    <form id="search-form" class="form-inline" asp-controller="jobs" asp-action="Index">
+        <div class="form-group col-md-10">
+            <input type="text" class="form-control" id="SearchString" name="SearchString" placeholder="Digite a vaga que está buscando">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Procurar</button>
+        </div>
+    </form>
+</div>
+
+<main>
+
+    <div id="jobs-container" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                 
+                <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>                  
+
+                @foreach (var item in Model)
+                {
+                    <ul id="job-list" class="list-group">
+
+                        @if (item.NewJob == true) 
+                        {
+                            <li class="list-group-item new-job">
+                                <img src="~/img/company.svg" alt="Company">
+                                <p>@Html.DisplayFor(modelItem => item.Company)</p>
+                                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                                <p>R$ @Html.DisplayFor(modelItem => item.Salary)</p>
+                                <span class="new-job-label">Nova</span>
+                                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            </li>
+                        }
+                        else 
+                        {                         
+                            <li class="list-group-item">
+                                <img src="~/img/company.svg" alt="Company">
+                                <p>@Html.DisplayFor(modelItem => item.Company)</p>
+                                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                                <p>R$ @Html.DisplayFor(modelItem => item.Salary)</p>
+                                <span class="new-job-label">Nova</span>
+                                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</main>

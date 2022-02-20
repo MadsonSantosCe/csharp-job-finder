@@ -1,0 +1,23 @@
+﻿@model csharp_job_finder.Models.Job
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="job-view-container" class="container">
+    <div class="row text-center">
+        <a class="back-link main-color" asp-action="Index" >Voltar</a>
+        <div id="img-container" class="col-md-12">
+            <img src="/img/company.svg" alt="Company">
+        </div>
+        <div class="col-md-12">
+            <h1 class="main-color">@Html.DisplayFor(model => model.Title)</h1>
+            <p class="bold">Quem eles estão buscando:</p>
+            <p class="job-desc">@Html.DisplayFor(model => model.Description)</p>
+            <p><span class="bold">O salário informado é de:</span> R$ @Html.DisplayFor(model => model.Salary)</p>
+            <p>
+                Para trabalhar na <span class="bold main-color">@Html.DisplayFor(model => model.Company)</span> envie um e-mail para a <a class="main-color" href="mail:to @Html.DisplayFor(model => model.Email)">@Html.DisplayFor(model => model.Email)</a>
+            </p>
+        </div>
+    </div>
+</div>
